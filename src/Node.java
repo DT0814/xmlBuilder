@@ -71,6 +71,18 @@ public class Node {
         return i;
     }
 
+    public String getAttrByName(String name) {
+        String attrStr = "";
+        if ( attrs != null && this.attrs.keySet().size() > 0 ) {
+            for ( String attrName : this.attrs.keySet() ) {
+                if ( attrName.equals(name) ) {
+                    attrStr = this.attrs.get(name);
+                }
+            }
+        }
+        return attrStr;
+    }
+
     //模糊删除返回删除节点个数
     public int delSonNodeLikeName(Node sonNode, String name) {
         int i = 0;
